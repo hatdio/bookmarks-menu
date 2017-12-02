@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE dialog [
+<!ENTITY % globalDTD SYSTEM "chrome://global/locale/global.dtd"> %globalDTD;
+]>
+
+<prefwindow id="bookmarks-menu-prefs"
+     title="Bookmarks menu Options"
+     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ 
+<prefpane id="bookmarks-menu-pane" label="Search options">
+  <preferences>
+    <preference id="prefToolbar" name="extensions.bookmark-menu.toolbar" type="int"/>
+    <preference id="prefQuery" name="extensions.bookmark-menu.query" type="string"/>
+    <preference id="prefMidBack" name="extensions.bookmark-menu.midBack" type="bool"/>
+    <preference id="prefAddOpenAll" name="extensions.bookmark-menu.addOpenAll" type="bool"/>
+    <preference id="prefOnoverOpen" name="extensions.bookmark-menu.onoverOpen" type="bool"/>
+    <preference id="prefKeepOpen" name="extensions.bookmark-menu.keepOpen" type="bool"/>
+    <preference id="prefOpenNewTab" name="extensions.bookmark-menu.openNewTab" type="bool"/>
+    <preference id="prefHideOptions" name="extensions.bookmark-menu.hideOptions" type="bool"/>
+    <preference id="prefHideDelete" name="extensions.bookmark-menu.hideDelete" type="bool"/>
+    <preference id="prefShowRecent" name="extensions.bookmark-menu.showRecent" type="bool"/>
+    <preference id="prefShowTop" name="extensions.bookmark-menu.showTop" type="bool"/>
+  </preferences>
+
+<groupbox>
+	<caption label="Search options"/>
+	<radiogroup id="prefOptions" preference="prefToolbar">
+		<radio id="toolbar" label="Just Bookmarks toolbar items" value="1"/>
+		<radio id="search-query" label="Search all bookmarks items for:" value="2"/>
+			<vbox>
+				<textbox preference="prefQuery" id="search-query" onfocus="document.getElementById('prefOptions').selectedIndex = 1;" />
+			</vbox>
+		<radio id="both2options" label="Include both 2 first options (search results in a submenu)" value="3"/>
+		<radio id="allBookmarks" label="All Bookmark items" value="4"/>
+	</radiogroup>
+
+</groupbox>
+
+<groupbox>
+	<caption label="Bookmarks"/>
+	<checkbox label="Middle click open bookmarks in background (new tab)" preference="prefMidBack"/>
+	<checkbox label="Add 'Open All in tabs' in sub-folders" preference="prefAddOpenAll"/>
+	<checkbox label="Open 'Bookmarks menu' on mouse over" preference="prefOnoverOpen"/>
+	<checkbox label="Keep 'Bookmarks menu' open after clicking a bookmark" preference="prefKeepOpen"/>
+	<checkbox label="Left click open bookmarks in new tab" preference="prefOpenNewTab"/>
+	<checkbox label="Hide 'Options' menu element" preference="prefHideOptions"/>
+	<checkbox label="Hide 'Delete' option in popup menu (right click on bookmark)" preference="prefHideDelete"/>
+	<checkbox label="Show 'Recently Bookmarked' folder" preference="prefShowRecent"/>
+	<checkbox label="Show 'Most Visited' folder" preference="prefShowTop"/>
+</groupbox>
+
+</prefpane>
+</prefwindow>
+

@@ -1,0 +1,4 @@
+content custombutton content/
+overlay	chrome://browser/content/browser.xul chrome://custombutton/content/button.xul
+skin	custombutton	classic/1.0	skin/
+style	chrome://global/content/customizeToolbar.xul chrome://custombutton/skin/button.css

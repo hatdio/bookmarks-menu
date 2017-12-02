@@ -1,0 +1,11 @@
+@namespace url('http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul');
+
+#bookmenu-button {
+	list-style-image: url('chrome://custombutton/skin/bmenu-large.png');
+}
+toolbar[iconsize='small'] #bookmenu-button {
+	list-style-image: url('chrome://custombutton/skin/bmenu-small.png');
+}
+#bookmenu-button menuitem {
+	cursor: pointer;
+}
